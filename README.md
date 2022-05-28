@@ -28,7 +28,7 @@
 
 
 
-###### Note: Search is based on first 500 movies show on home page if want to include all 8000+ movies in search then remove [:500] in line no 209 in app.py
+###### Note: Search is based on first 500 movies show on home page if want to include all 8000+ movies in search then remove [:500] in line no 206 in app.py
 > before code 
 
 
