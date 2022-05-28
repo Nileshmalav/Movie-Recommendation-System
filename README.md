@@ -13,6 +13,17 @@
 
 # Movies-Recomodation-System Based On Content Based Recomodation/Filtering
 ![Screenshot (3)](https://user-images.githubusercontent.com/76725762/170815498-45a7c711-8e3b-4ab8-a07f-18fa2a251f1e.png)
+
+#
+
+![Screenshot (7)](https://user-images.githubusercontent.com/76725762/170815933-9a0aa00a-ef0f-4bf3-9f70-0f5f4fc385b2.png)
+
+#
+
+![Screenshot (8)](https://user-images.githubusercontent.com/76725762/170815942-993afea1-2140-4a24-ac9c-42004b18b99d.png)
+
+#
+
 ![Screenshot (4)](https://user-images.githubusercontent.com/76725762/170815511-be0b5c55-e9aa-44c3-931b-7fb4b04fc152.png)
 
 
