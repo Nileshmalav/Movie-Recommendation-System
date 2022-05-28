@@ -1,6 +1,3 @@
-import keyword
-
-from numpy import concatenate
 from myinitial import *
 from mydatabase import *
 
