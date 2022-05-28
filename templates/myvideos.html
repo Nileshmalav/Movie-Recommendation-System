@@ -40,19 +40,19 @@
             {% if movie.type=="l" %}
             <div class="movies">
 
-                <div onclick="document.getElementById('{{movie['index']}}').style.display='block'"
+                <div onclick="document.getElementById('{{movie['sno']}}').style.display='block'"
                     id="movie{{movie['index']}}" class="movie">
                     <img src="{{movie.Poster_Url}}" alt="">
-                    <h4>{{movie.Title}}</h4>
+                    <h4>{{movie.name}}</h4>
 
                 </div>
 
                 <div id="{{movie['index']}}" class="w3-modal">
                     <div class="w3-modal-content w3-card-4">
                         <header class="w3-container w3-red">
-                            <span onclick="document.getElementById('{{movie['index']}}').style.display='none'"
+                            <span onclick="document.getElementById('{{movie['sno']}}').style.display='none'"
                                 class="w3-button w3-large w3-display-topright">&times;</span>
-                            <h2>{{movie.Title}}</h2>
+                            <h2>{{movie.name}}</h2>
                         </header>
                         <div class="w3-container">
                             <div class="imgagediv">
@@ -107,19 +107,19 @@
             {% if movie.type=="u" %}
             <div class="movies">
 
-                <div onclick="document.getElementById('{{movie['index']}}').style.display='block'"
+                <div onclick="document.getElementById('{{movie['sno']}}').style.display='block'"
                     id="movie{{movie['index']}}" class="movie">
                     <img src="{{movie.Poster_Url}}" alt="">
-                    <h4>{{movie.Title}}</h4>
+                    <h4>{{movie.name}}</h4>
 
                 </div>
 
                 <div id="{{movie['index']}}" class="w3-modal">
                     <div class="w3-modal-content w3-card-4">
                         <header class="w3-container w3-red">
-                            <span onclick="document.getElementById('{{movie['index']}}').style.display='none'"
+                            <span onclick="document.getElementById('{{movie['sno']}}').style.display='none'"
                                 class="w3-button w3-large w3-display-topright">&times;</span>
-                            <h2>{{movie.Title}}</h2>
+                            <h2>{{movie.name}}</h2>
                         </header>
                         <div class="w3-container">
                             <div class="imgagediv">
@@ -174,19 +174,19 @@
             {% if movie.type=="w" %}
             <div class="movies">
 
-                <div onclick="document.getElementById('{{movie['index']}}').style.display='block'"
+                <div onclick="document.getElementById('{{movie['sno']}}').style.display='block'"
                     id="movie{{movie['index']}}" class="movie">
                     <img src="{{movie.Poster_Url}}" alt="">
-                    <h4>{{movie.Title}}</h4>
+                    <h4>{{movie.name}}</h4>
 
                 </div>
 
                 <div id="{{movie['index']}}" class="w3-modal">
                     <div class="w3-modal-content w3-card-4">
                         <header class="w3-container w3-red">
-                            <span onclick="document.getElementById('{{movie['index']}}').style.display='none'"
+                            <span onclick="document.getElementById('{{movie['sno']}}').style.display='none'"
                                 class="w3-button w3-large w3-display-topright">&times;</span>
-                            <h2>{{movie.Title}}</h2>
+                            <h2>{{movie.name}}</h2>
                         </header>
                         <div class="w3-container">
                             <div class="imgagediv">
