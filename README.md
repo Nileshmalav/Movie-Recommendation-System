@@ -2,7 +2,7 @@
 # Movies-Recomodation-System
 
 
-# to run this project in local machine
+## to run this project in local machine
 
 1. install python
 2. install dependencies
