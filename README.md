@@ -35,7 +35,7 @@
 >         return render_template("home.html", username=username, movies=recomend_movies[:500])
 
 
-![Screenshot (9)](https://user-images.githubusercontent.com/76725762/170824725-e6efe3c9-bb3d-4930-a16b-d9469e2495fc.png)
+![Screenshot (12)](https://user-images.githubusercontent.com/76725762/170856383-19d1a46b-2444-4c64-97af-4a59795e9ac6.png)
 
  
 >after code
@@ -44,5 +44,5 @@
 >        return render_template("home.html", username=username, movies=recomend_movies)
 
 
-![Screenshot (10)](https://user-images.githubusercontent.com/76725762/170824731-8c9990ac-5897-435d-a665-7f45368a54db.png)
+![Screenshot (13)](https://user-images.githubusercontent.com/76725762/170856388-162aebfd-bbf5-47e2-9bca-ec54db0137ed.png)
 
