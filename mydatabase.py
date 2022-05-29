@@ -45,7 +45,7 @@ class ratings_db(db.Model):
     name = db.Column(db.Text)  # movie name
 
     type = db.Column(db.Text)  # w for watched l for liked u for unliked
-    # rating default -1 for unlike 2 for watched 5 for liked
+    # rating default -1 for unlike 2 for watched 5 for liked and +0.2 for watched again
     rating = db.Column(db.Float, default=0)
 
     Release_Date = db.Column(db.Text)

@@ -231,6 +231,7 @@ def myvideos():
 
 @app.route("/rate/<string:type>/<string:id>")
 def rate(id, type):
+    # rating default -1 for unlike, 2 for watched, 5 for liked and +0.2 for watched again
     user_object = load_user(current_user.get_id())
     username = user_object.username
 
