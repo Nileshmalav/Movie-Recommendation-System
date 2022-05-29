@@ -16,11 +16,11 @@
 
 #
 
-![Screenshot (7)](https://user-images.githubusercontent.com/76725762/170815933-9a0aa00a-ef0f-4bf3-9f70-0f5f4fc385b2.png)
+![Screenshot (17)](https://user-images.githubusercontent.com/76725762/170856432-1999e8be-54f3-41a0-bd6d-9f98805564b9.png)
 
 #
 
-![Screenshot (8)](https://user-images.githubusercontent.com/76725762/170815942-993afea1-2140-4a24-ac9c-42004b18b99d.png)
+![Screenshot (16)](https://user-images.githubusercontent.com/76725762/170856437-7c3957a5-0f55-45d8-813f-6a1b69b46d00.png)
 
 #
 
@@ -28,7 +28,7 @@
 
 
 
-###### Note: Search is based on first 500 movies show on home page if want to include all 8000+ movies in search then remove [:500] in line no 206 in app.py
+## Note: Search is based on first 500 movies show on home page if want to include all 8000+ movies in search then remove [:500] in line no 206 in app.py
 > before code 
 
 
