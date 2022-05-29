@@ -46,3 +46,13 @@
 
 ![Screenshot (13)](https://user-images.githubusercontent.com/76725762/170856388-162aebfd-bbf5-47e2-9bca-ec54db0137ed.png)
 
+
+
+#
+
+![Screenshot (18)](https://user-images.githubusercontent.com/76725762/170856491-c3f1535c-c0f9-4e35-a469-207e991b9da0.png)
+
+
+
+# Movie Recommendation based on user likes and dislikes , watched and watched again
+![Screenshot (19)](https://user-images.githubusercontent.com/76725762/170856542-68c264dc-d3ab-4f49-94ef-894ca4106463.png)
