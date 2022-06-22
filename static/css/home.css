@@ -10,12 +10,24 @@ body {
 .navbar {
     color: white;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(206, 0, 0);
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+
+.nav-upper {
+    color: white;
+    display: flex;
+    width: 100%;
     align-items: center;
     justify-content: space-between;
     padding: 0px 10px;
+    padding-bottom: 5px;
     background-color: rgb(206, 0, 0);
 }
-
 
 /* search box  start  */
 .navbar input {
@@ -23,8 +35,18 @@ body {
     width: 50%;
     font-size: 16px;
     border-radius: 10px;
-    border: 2px solid rgb(163, 3, 3);
+    border: 2px solid rgb(223, 22, 22);
 
+}
+
+.dropdown-menu {
+    background-color: rgb(248, 199, 210);
+    color: white;
+}
+
+a {
+    align-items: center;
+    text-align: center;
 }
 
 .navbar input:focus {
@@ -36,18 +58,59 @@ body {
 
 .navbarR {
     display: flex;
-    width: 100%;
-    align-items: flex-end;
+    align-items: center;
     justify-content: end;
+    text-align: center;
+
 }
 
 .navbarR a {
     padding: 4px;
 }
 
+.navbar-bottom{
+    justify-content: space-between;
+    align-items: center;
+}
 /* navigation bar end  */
 
+.offcanvas {
+    color: white;
+    background-color: rgb(20, 0, 29);
+}
 
+.offcanvas-body {
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-direction: column;
+}
+
+.btn-close {
+    color: white;
+    background-color: white;
+}
+
+#offcanvas-a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.offcanvas-body a:hover {
+    background-color: rgb(83, 60, 93);
+
+}
+
+#username {
+    right: 0px;
+    font-weight:bolder ;
+}
+
+#username:hover {
+    background-color: rgb(196, 13, 13);
+}
 
 /* content start   */
 .content_main {
@@ -59,6 +122,7 @@ body {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    padding: 20px;
 
 }
 
@@ -68,7 +132,9 @@ body {
     text-align: center;
 
 }
-
+.w3-container {
+    padding: 10px;
+}
 .movie img {
     width: 220px;
     height: 320px;
@@ -86,8 +152,8 @@ body {
 }
 
 .w3-modal img {
-    width: 400px;
-    height: 600px;
+    width: 320px;
+    height: 480px;
 }
 
 .imgagediv {
@@ -104,6 +170,10 @@ body {
 
 .w3-tooltip {
     cursor: pointer;
+}
+
+.content-title{
+    padding:20px ;
 }
 
 /* movie show  */

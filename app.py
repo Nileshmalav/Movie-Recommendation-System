@@ -15,29 +15,31 @@ def login():
         username = request.form['username']
         password = request.form['password']
         user = userpassword_db.query.filter_by(
-            username=username, password=password).first() # checking if user exits
+            username=username, password=password).first()  # checking if user exits
         if user:
-            login_user(user) # login that user
+            login_user(user)  # login that user
             return redirect("/")
         else:
-            return render_template("login.html", message="No such user exists") 
+            return render_template("login.html", message="No such user exists")
 
     return render_template("login.html")
 
 
 @app.route("/logout")
 def logout():
-    logout_user() # logout current user
+    logout_user()  # logout current user
     return redirect("/")
 
 
 @app.route("/signup", methods=['Get', 'Post'])
 def signup():
     if request.method == "POST":
-        username = request.form['username'] # requesting data from form 
-        password = request.form['password'] # requesting data from form 
-        confirm_password = request.form['confirm_password'] # requesting data from form 
-        user = userpassword_db.query.filter_by(username=username).first() # checking if username already exists
+        username = request.form['username']  # requesting data from form
+        password = request.form['password']  # requesting data from form
+        # requesting data from form
+        confirm_password = request.form['confirm_password']
+        # checking if username already exists
+        user = userpassword_db.query.filter_by(username=username).first()
         if user:
             return render_template("login.html", message="username already exists")
         else:
@@ -45,11 +47,11 @@ def signup():
                 if len(password) > 5:
                     user = userpassword_db(
                         username=username, password=password)
-                    db.session.add(user) # adding user if not exists
+                    db.session.add(user)  # adding user if not exists
                     db.session.commit()
                     user_object = userpassword_db.query.filter_by(
                         username=username).first()
-                    login_user(user_object) # login new user
+                    login_user(user_object)  # login new user
                     return redirect("/")
                 return render_template("login.html", message="password length is too short")
             else:
@@ -82,7 +84,7 @@ movies = pd.read_sql_table("movies_db",  con="sqlite:///todo.db")
 # "Release_Date","Title","Overview","Popularity","Original_Language","Poster_Url","id","imdb_id","original_title","belongs_to_collection","Genre","tagline","cast","keywords","crew"}
 
 # usefull columbs for our recomodtions are Title , Overview , tagline , Original_Language , Genre , belongs_to_collection , cast , keywords , crew
-# setting them to list 
+# setting them to list
 movies['TitleN'] = movies['Title'].apply(lambda x: str(x).split())
 movies['OverviewN'] = movies['Overview'].apply(lambda x: str(x).split())
 movies['taglineN'] = movies['tagline'].apply(lambda x: str(x).split())
@@ -109,29 +111,32 @@ movies['crewN'] = movies['crew'].apply(
 movies['Tags'] = movies['TitleN']+movies['OverviewN']+movies['taglineN']+movies['Original_LanguageN'] + \
     movies['GenreN']+movies['belongs_to_collectionN'] + \
     movies['castN']+movies['keywordsN']+movies['crewN']
-# converting list to string with spaces 
+# converting list to string with spaces
 movies['Tags'] = movies['Tags'].apply(lambda x: " ".join(x))
-# lowering string caracters 
+# lowering string caracters
 movies['Tags'] = movies['Tags'].apply(lambda x: x.lower())
 
 
-# removing gramatic similar words like love, loving , lovable etc to one word 
+# removing gramatic similar words like love, loving , lovable etc to one word
 ps = PorterStemmer()
+
+
 def stem(text):
     y = []
     for i in text.split():
         y.append(ps.stem(i))
     return " ".join(y)
 
-# taking only our needed columbs from all columbs 
+
+# taking only our needed columbs from all columbs
 movies = movies[["index", "Release_Date", "Title", "Overview", "Popularity", "Original_Language", "Poster_Url", "id",
                  "imdb_id", "original_title", "belongs_to_collection", "Genre", "tagline", "cast", "keywords", "crew", "Tags"]]
 
-# removing gramatic similar words like love, loving , lovable etc to one word 
+# removing gramatic similar words like love, loving , lovable etc to one word
 movies['Tags'] = movies['Tags'].apply(stem)
 
 
-# converting based on similarity of tags in all movies and taking cosine similarity 
+# converting based on similarity of tags in all movies and taking cosine similarity
 cv = CountVectorizer(max_features=5000, stop_words='english')
 
 vectors = cv.fit_transform(movies['Tags']).toarray()
@@ -140,7 +145,7 @@ vectors = cv.fit_transform(movies['Tags']).toarray()
 similarity = cosine_similarity(vectors)
 
 
-# taking list of movies as input and getting list of movies based on it  
+# taking list of movies as input and getting list of movies based on it
 
 def recommend(mymovie):
 
@@ -154,7 +159,7 @@ def recommend(mymovie):
                  for x in range(len(distances))]
     if len(mymovie) > 1:
 
-        # suming distances of all movies in mymovies multiplied by user rating for it 
+        # suming distances of all movies in mymovies multiplied by user rating for it
 
         for movie in mymovie[1:]:
             movie_index = movies[movies['Title'] == movie.name].index[0]
@@ -163,7 +168,7 @@ def recommend(mymovie):
             distances = [distances[x] + distance[x] *
                          (movie.rating) for x in range(len(distances))]
 
-    # re forming  movies list  from distances and index list 
+    # re forming  movies list  from distances and index list
 
     movies_list = movies
     movies_list['recomodation_score'] = movies['index'].apply(
@@ -172,7 +177,7 @@ def recommend(mymovie):
     movies_list = movies_list.sort_values(
         by="recomodation_score", axis=0, ascending=False, inplace=False, kind='quicksort', na_position='last')
 
-    # making list from dataframe to render in frontend  
+    # making list from dataframe to render in frontend
 
     movies_list = [movies_list.iloc[x] for x in range(len(movies_list))]
     return movies_list
@@ -181,7 +186,6 @@ def recommend(mymovie):
 # TODO: Algorithm
 # TODO: Algorithm
 # TODO: Algorithm
-
 
 
 # TODO: Home Page
@@ -195,16 +199,17 @@ def home():
     user_object = load_user(current_user.get_id())
     if user_object:
         username = user_object.username  # username curently loggedin
-        mymovies = ratings_db.query.filter_by(username=username).all() # rating given by user to movies 
+        mymovies = ratings_db.query.filter_by(
+            username=username).all()  # rating given by user to movies
         if mymovies:
-            recomend_movies = recommend(mymovies) # passing list of movies with rating in recomend_movies function and getting list of movies based on rating given by particular user
+            # passing list of movies with rating in recomend_movies function and getting list of movies based on rating given by particular user
+            recomend_movies = recommend(mymovies)
         else:
-            # if new user then just showing movies based on popularity 
+            # if new user then just showing movies based on popularity
             recomend_movies = movies_db.query.order_by(
                 desc(movies_db.Popularity)).all()
 
-        return render_template('home.html',username=username,movies=recomend_movies[:500])
-
+        return render_template('home.html', username=username, movies=recomend_movies[:500])
 
     return render_template('login.html')
 
@@ -221,8 +226,8 @@ def myvideos():
     if user_object:
         username = user_object.username
         my_movies = ratings_db.query.filter_by(username=username).all()
-        return render_template("myvideos.html", movies=my_movies)
-    return render_template("myvideos.html", movies=[])
+        return render_template("myvideos.html", movies=my_movies,username=username)
+    return render_template("myvideos.html", movies=[],username=username)
 
 # TODO:: Ratings
 # TODO:: Ratings
@@ -239,7 +244,7 @@ def rate(id, type):
     myrating = ratings_db.query.filter_by(
         username=username, movie_index=id).first()
     if myrating:
-        # taking +0.2 for movie rewatch 
+        # taking +0.2 for movie rewatch
         if myrating.type == type == "w":
             myrating.rating += 0.2
         else:
