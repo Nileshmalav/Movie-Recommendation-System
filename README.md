@@ -16,7 +16,7 @@
 
 #
 
-![Uploading Screenshot (6).png…]()
+![Screenshot (6)](https://user-images.githubusercontent.com/76725762/175012104-982e0a1e-ac6b-416b-87ea-2b5a2c11dea9.png)
 
 
 #
