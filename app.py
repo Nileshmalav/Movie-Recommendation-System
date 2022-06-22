@@ -57,7 +57,7 @@ def signup():
             else:
                 return render_template("login.html", message="password and confirm password are not same")
 
-    return render_template("login.html")
+    return render_template("signup.html")
 
 # TODO: login logout and signup  end
 # TODO: login logout and signup  end
