@@ -2,16 +2,16 @@
 {% extends "layout.html" %}
 
 {% block head %}
-
 <link rel="stylesheet" href="{{ url_for('static', filename='/css/home.css') }}">
    
 {% endblock %}
 
 
-        <!-- content Recomodation -->
+
 {% block body %}
 
-        <h2 class="content-title">Recomodation</h2>
+        <!-- content Recomodation -->
+        <h2 class="content-title">{{type}}</h2>
 
         <div class="content">
             {% for movie in movies %}
@@ -77,7 +77,6 @@
             </div>
             {% endfor %}
         </div>
-    </div>
 
 
 {% endblock %}

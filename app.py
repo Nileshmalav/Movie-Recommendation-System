@@ -226,8 +226,45 @@ def myvideos():
     if user_object:
         username = user_object.username
         my_movies = ratings_db.query.filter_by(username=username).all()
-        return render_template("myvideos.html", movies=my_movies,username=username)
-    return render_template("myvideos.html", movies=[],username=username)
+        return render_template("myvideos.html", movies=my_movies, username=username)
+    return render_template("myvideos.html", movies=[], username=username)
+
+
+@login_required
+@app.route("/nflix/<string:type>/<string:option>")
+def prefer_sort(type, option):
+    user_object = load_user(current_user.get_id())
+    if user_object:
+        username = user_object.username
+        if type == "genre":
+            my_movies = movies_db.query.filter(
+                movies_db.Genre.contains(option)).all()
+            return render_template("view.html", type=option, movies=my_movies[:500], username=username)
+        if type == "year":
+            if len(option) < 6:
+                my_movies = movies_db.query.filter(
+                    movies_db.Release_Date.contains(option)).all()
+                return render_template("view.html", type=option, movies=my_movies[:500], username=username)
+            else:
+                initial = int(option[:4])
+                final = int(option[5:])
+                my_movies = []
+                for i in range(10):
+                    my_movies = my_movies + \
+                        movies_db.query.filter(
+                            movies_db.Release_Date.contains(str(final-i))).all()
+                return render_template("view.html", type=option, movies=my_movies[:500], username=username)
+
+        if type == "popular":
+            recomend_movies = movies_db.query.order_by(
+                desc(movies_db.Popularity)).all()
+            return render_template('home.html', username=username, movies=recomend_movies[:500])
+        
+        if type == "language":
+            my_movies = movies_db.query.filter(
+            movies_db.Original_Language.contains(option)).all()
+            return render_template("view.html", type=option, movies=my_movies[:500], username=username)
+
 
 # TODO:: Ratings
 # TODO:: Ratings
