@@ -212,7 +212,7 @@ def home():
             recomend_movies = movies_db.query.order_by(
                 desc(movies_db.Popularity)).all()
 
-        return render_template('home.html', username=username, movies=recomend_movies[:500])
+        return render_template('home.html', username=username, movies=recomend_movies[:250])
 
     return render_template('login.html')
 
@@ -243,12 +243,12 @@ def prefer_sort(type, option):
         if type == "genre":
             my_movies = movies_db.query.filter(
                 movies_db.Genre.contains(option)).all()
-            return render_template("view.html", type=option, movies=my_movies[:500], username=username)
+            return render_template("view.html", type=option, movies=my_movies[:250], username=username)
         if type == "year":
             if len(option) < 6:
                 my_movies = movies_db.query.filter(
                     movies_db.Release_Date.contains(option)).all()
-                return render_template("view.html", type=option, movies=my_movies[:500], username=username)
+                return render_template("view.html", type=option, movies=my_movies[:250], username=username)
             else:
                 initial = int(option[:4])
                 final = int(option[5:])
@@ -257,17 +257,17 @@ def prefer_sort(type, option):
                     my_movies = my_movies + \
                         movies_db.query.filter(
                             movies_db.Release_Date.contains(str(final-i))).all()
-                return render_template("view.html", type=option, movies=my_movies[:500], username=username)
+                return render_template("view.html", type=option, movies=my_movies[:250], username=username)
 
         if type == "popular":
             recomend_movies = movies_db.query.order_by(
                 desc(movies_db.Popularity)).all()
-            return render_template('home.html', username=username, movies=recomend_movies[:500])
+            return render_template('home.html', username=username, movies=recomend_movies[:250])
         
         if type == "language":
             my_movies = movies_db.query.filter(
             movies_db.Original_Language.contains(option)).all()
-            return render_template("view.html", type=option, movies=my_movies[:500], username=username)
+            return render_template("view.html", type=option, movies=my_movies[:250], username=username)
 
 
 # TODO:: Ratings
