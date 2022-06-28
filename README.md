@@ -4,7 +4,7 @@
 
 https://nflixmovies.herokuapp.com/
 
-###### note : dataset was of 1000 movies only in above sample url due to limitation of RAM on heroku
+###### note : dataset was of 1000 movies only in above sample url due to limitation of RAM on heroku for better recommendation run on local machine
 
 ## to run this project in local machine
 
