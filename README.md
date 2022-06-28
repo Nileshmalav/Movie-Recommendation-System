@@ -1,4 +1,4 @@
-# Recomodation-Engine-Algorithm
+# Recommendation-Engine-Algorithm
 
 # sample project at 
 
@@ -16,7 +16,7 @@ https://nflixmovies.herokuapp.com/
 
 
 
-# Movies-Recomodation-System Based On Content Based Recomodation/Filtering
+# Movies-Recommendation-System Based On Content Based Recommendation/Filtering
 
 
 #
