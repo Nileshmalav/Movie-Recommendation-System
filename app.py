@@ -78,6 +78,8 @@ def signup():
 # TODO: Algorithm
 # TODO: Algorithm
 # TODO: Algorithm
+
+
 movies = pd.read_sql_table("movies_db",  con="sqlite:///todo.db")
 
 
@@ -99,6 +101,7 @@ movies['belongs_to_collectionN'] = movies['belongs_to_collection'].apply(
 
 movies['castN'] = movies['cast'].apply(
     lambda x: [i.replace(" ", "") for i in ast.literal_eval(x)])
+
 
 movies['keywordsN'] = movies['keywords'].apply(
     lambda x: [i.replace(" ", "") for i in ast.literal_eval(x)])
@@ -228,6 +231,7 @@ def myvideos():
         my_movies = ratings_db.query.filter_by(username=username).all()
         return render_template("myvideos.html", movies=my_movies, username=username)
     return render_template("myvideos.html", movies=[], username=username)
+
 
 
 @login_required
