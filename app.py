@@ -7,6 +7,14 @@ def load_user(sno):
     return userpassword_db.query.get(sno)
 
 
+
+
+
+
+
+
+
+
 # TODO: login logout and signup
 # TODO: login logout and signup
 @app.route("/login", methods=['Get', 'Post'])
@@ -222,15 +230,6 @@ def home():
 # TODO: Home Page end
 
 
-@login_required
-@app.route("/yourvideos")
-def myvideos():
-    user_object = load_user(current_user.get_id())
-    if user_object:
-        username = user_object.username
-        my_movies = ratings_db.query.filter_by(username=username).all()
-        return render_template("myvideos.html", movies=my_movies, username=username)
-    return render_template("myvideos.html", movies=[], username=username)
 
 
 
@@ -273,6 +272,26 @@ def prefer_sort(type, option):
 # TODO:: Ratings
 # TODO:: Ratings
 # TODO:: Ratings
+
+
+
+@login_required
+@app.route("/nflix/<string:type>")
+def myvideos(type):
+    user_object = load_user(current_user.get_id())
+    if user_object:
+        username = user_object.username
+        my_movies=None
+        if type=="watched":
+            my_movies = ratings_db.query.filter_by(username=username,type="w").all()
+            return render_template("myvideos.html", watched=my_movies, username=username)
+        elif type=="like":
+            my_movies1 = ratings_db.query.filter_by(username=username,type="l").all()
+            my_movies2 = ratings_db.query.filter_by(username=username,type="u").all()
+            return render_template("myvideos.html", liked=my_movies1,disliked= my_movies2, username=username)
+
+
+    return render_template("myvideos.html", movies=[], username=username)
 
 
 @app.route("/rate/<string:type>/<string:id>")
