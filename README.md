@@ -1,5 +1,10 @@
-# Recomodation-Engine-Algorithm
+# Recommendation-Engine-Algorithm
 
+# sample project at 
+
+https://nflixmovies.herokuapp.com/
+
+###### note : dataset was of 1000 movies only in above sample url due to limitation of RAM on heroku for better recommendation with whole dataset of 9000+ movies run on local machine
 
 ## to run this project in local machine
 
@@ -11,7 +16,7 @@
 
 
 
-# Movies-Recomodation-System Based On Content Based Recomodation/Filtering
+# Movies-Recommendation-System Based On Content Based Recommendation/Filtering
 
 
 #
