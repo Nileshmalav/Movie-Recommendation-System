@@ -15,17 +15,17 @@
             {% if movie.type=="l" %}
             <div class="movies">
 
-                <div onclick="document.getElementById('{{movie['sno']}}').style.display='block'"
-                    id="movie{{movie['sno']}}" class="movie">
+                <div onclick="document.getElementById('{{movie['movie_index']}}').style.display='block'"
+                    id="movie{{movie['movie_index']}}" class="movie">
                     <img src="{{movie.Poster_Url}}" alt="">
                     <h4>{{movie.name}}</h4>
 
                 </div>
 
-                <div id="{{movie['sno']}}" class="w3-modal">
+                <div id="{{movie['movie_index']}}" class="w3-modal">
                     <div class="w3-modal-content w3-card-4">
                         <header class="w3-container w3-red">
-                            <span onclick="document.getElementById('{{movie['sno']}}').style.display='none'"
+                            <span onclick="document.getElementById('{{movie['movie_index']}}').style.display='none'"
                                 class="w3-button w3-large w3-display-topright">&times;</span>
                             <h2>{{movie.name}}</h2>
                         </header>
@@ -42,24 +42,24 @@
                                     <p> <b>Overview</b> {{movie.Overview}}</p>
                                 </div>
                                 <div>
-                                    <div class="w3-tooltip" onclick='myRedirect("/rate/l/{{movie['sno']}}")'>
+                                    <div class="w3-tooltip">
                                         <span style="position:absolute;left:30px;bottom:25px"
                                             class="w3-text w3-tag">like</span>
-                                        <span class="material-symbols-outlined">
+                                        <span style="color:white;"  onclick='rate("/rate/l/{{movie['movie_index']}}","like{{movie['movie_index']}}")' id="like{{movie['movie_index']}}" class="material-symbols-outlined">
                                             thumb_up
                                         </span>
                                     </div>
-                                    <div class="w3-tooltip" onclick='myRedirect("/rate/u/{{movie['sno']}}")'>
+                                    <div class="w3-tooltip">
                                         <span style="position:absolute;left:30px;bottom:25px"
                                             class="w3-text w3-tag">dislike</span>
-                                        <span class="material-symbols-outlined">
+                                        <span style="color:white;"  onclick='rate("/rate/u/{{movie['movie_index']}}","unlike{{movie['movie_index']}}")' id="unlike{{movie['movie_index']}}" class="material-symbols-outlined">
                                             thumb_down
                                         </span>
                                     </div>
-                                    <div class="w3-tooltip" onclick='myRedirect("/rate/w/{{movie['sno']}}")'>
+                                    <div class="w3-tooltip">
                                         <span style="position:absolute;left:30px;bottom:25px"
                                             class="w3-text w3-tag">watched</span>
-                                        <span class="material-symbols-outlined">
+                                        <span style="color:white;"  onclick='rate("/rate/w/{{movie['movie_index']}}","watch{{movie['movie_index']}}")' id="watch{{movie['movie_index']}}" class="material-symbols-outlined">
                                             play_circle
                                         </span>
                                     </div>
@@ -85,17 +85,17 @@
             {% if movie.type=="u" %}
             <div class="movies">
 
-                <div onclick="document.getElementById('{{movie['sno']}}').style.display='block'"
-                    id="movie{{movie['sno']}}" class="movie">
+                <div onclick="document.getElementById('{{movie['movie_index']}}').style.display='block'"
+                    id="movie{{movie['movie_index']}}" class="movie">
                     <img src="{{movie.Poster_Url}}" alt="">
                     <h4>{{movie.name}}</h4>
 
                 </div>
 
-                <div id="{{movie['sno']}}" class="w3-modal">
+                <div id="{{movie['movie_index']}}" class="w3-modal">
                     <div class="w3-modal-content w3-card-4">
                         <header class="w3-container w3-red">
-                            <span onclick="document.getElementById('{{movie['sno']}}').style.display='none'"
+                            <span onclick="document.getElementById('{{movie['movie_index']}}').style.display='none'"
                                 class="w3-button w3-large w3-display-topright">&times;</span>
                             <h2>{{movie.name}}</h2>
                         </header>
@@ -112,24 +112,24 @@
                                     <p> <b>Overview</b> {{movie.Overview}}</p>
                                 </div>
                                 <div>
-                                    <div class="w3-tooltip" onclick='myRedirect("/rate/l/{{movie['sno']}}")'>
+                                    <div class="w3-tooltip">
                                         <span style="position:absolute;left:30px;bottom:25px"
                                             class="w3-text w3-tag">like</span>
-                                        <span class="material-symbols-outlined">
+                                        <span style="color:white;"  onclick='rate("/rate/l/{{movie['movie_index']}}","like{{movie['movie_index']}}")' id="like{{movie['movie_index']}}" class="material-symbols-outlined">
                                             thumb_up
                                         </span>
                                     </div>
-                                    <div class="w3-tooltip" onclick='myRedirect("/rate/u/{{movie['sno']}}")'>
+                                    <div class="w3-tooltip">
                                         <span style="position:absolute;left:30px;bottom:25px"
                                             class="w3-text w3-tag">dislike</span>
-                                        <span class="material-symbols-outlined">
+                                        <span style="color:white;"  onclick='rate("/rate/u/{{movie['movie_index']}}","unlike{{movie['movie_index']}}")' id="unlike{{movie['movie_index']}}" class="material-symbols-outlined">
                                             thumb_down
                                         </span>
                                     </div>
-                                    <div class="w3-tooltip" onclick='myRedirect("/rate/w/{{movie['sno']}}")'>
+                                    <div class="w3-tooltip">
                                         <span style="position:absolute;left:30px;bottom:25px"
                                             class="w3-text w3-tag">watched</span>
-                                        <span class="material-symbols-outlined">
+                                        <span style="color:white;"  onclick='rate("/rate/w/{{movie['movie_index']}}","watch{{movie['movie_index']}}")' id="watch{{movie['movie_index']}}" class="material-symbols-outlined">
                                             play_circle
                                         </span>
                                     </div>
@@ -156,17 +156,17 @@
             {% if movie.type=="w" %}
             <div class="movies">
 
-                <div onclick="document.getElementById('{{movie['sno']}}').style.display='block'"
-                    id="movie{{movie['sno']}}" class="movie">
+                <div onclick="document.getElementById('{{movie['movie_index']}}').style.display='block'"
+                    id="movie{{movie['movie_index']}}" class="movie">
                     <img src="{{movie.Poster_Url}}" alt="">
                     <h4>{{movie.name}}</h4>
 
                 </div>
 
-                <div id="{{movie['sno']}}" class="w3-modal">
+                <div id="{{movie['movie_index']}}" class="w3-modal">
                     <div class="w3-modal-content w3-card-4">
                         <header class="w3-container w3-red">
-                            <span onclick="document.getElementById('{{movie['sno']}}').style.display='none'"
+                            <span onclick="document.getElementById('{{movie['movie_index']}}').style.display='none'"
                                 class="w3-button w3-large w3-display-topright">&times;</span>
                             <h2>{{movie.name}}</h2>
                         </header>
@@ -183,24 +183,24 @@
                                     <p> <b>Overview</b> {{movie.Overview}}</p>
                                 </div>
                                 <div>
-                                    <div class="w3-tooltip" onclick='myRedirect("/rate/l/{{movie['sno']}}")'>
+                                    <div class="w3-tooltip">
                                         <span style="position:absolute;left:30px;bottom:25px"
                                             class="w3-text w3-tag">like</span>
-                                        <span class="material-symbols-outlined">
+                                        <span style="color:white;"  onclick='rate("/rate/l/{{movie['movie_index']}}","like{{movie['movie_index']}}")' id="like{{movie['movie_index']}}" class="material-symbols-outlined">
                                             thumb_up
                                         </span>
                                     </div>
-                                    <div class="w3-tooltip" onclick='myRedirect("/rate/u/{{movie['sno']}}")'>
+                                    <div class="w3-tooltip">
                                         <span style="position:absolute;left:30px;bottom:25px"
                                             class="w3-text w3-tag">dislike</span>
-                                        <span class="material-symbols-outlined">
+                                        <span style="color:white;"  onclick='rate("/rate/u/{{movie['movie_index']}}","unlike{{movie['movie_index']}}")' id="unlike{{movie['movie_index']}}" class="material-symbols-outlined">
                                             thumb_down
                                         </span>
                                     </div>
-                                    <div class="w3-tooltip" onclick='myRedirect("/rate/w/{{movie['sno']}}")'>
+                                    <div class="w3-tooltip">
                                         <span style="position:absolute;left:30px;bottom:25px"
                                             class="w3-text w3-tag">watched</span>
-                                        <span class="material-symbols-outlined">
+                                        <span style="color:white;"  onclick='rate("/rate/w/{{movie['movie_index']}}","watch{{movie['movie_index']}}")' id="watch{{movie['movie_index']}}" class="material-symbols-outlined">
                                             play_circle
                                         </span>
                                     </div>

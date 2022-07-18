@@ -5,8 +5,12 @@ body {
     color: White;
 }
 
+
 /* navigation bar start  */
+
+
 /* navigation bar start  */
+
 .navbar {
     color: white;
     display: flex;
@@ -29,14 +33,15 @@ body {
     background-color: rgb(206, 0, 0);
 }
 
+
 /* search box  start  */
+
 .navbar input {
     padding: 8px;
     width: 50%;
     font-size: 16px;
     border-radius: 10px;
     border: 2px solid rgb(223, 22, 22);
-
 }
 
 .dropdown-menu {
@@ -51,8 +56,8 @@ a {
 
 .navbar input:focus {
     outline: none;
-
 }
+
 
 /* search box  end  */
 
@@ -61,17 +66,18 @@ a {
     align-items: center;
     justify-content: end;
     text-align: center;
-
 }
 
 .navbarR a {
     padding: 4px;
 }
 
-.navbar-bottom{
+.navbar-bottom {
     justify-content: space-between;
     align-items: center;
 }
+
+
 /* navigation bar end  */
 
 .offcanvas {
@@ -100,19 +106,20 @@ a {
 
 .offcanvas-body a:hover {
     background-color: rgb(83, 60, 93);
-
 }
 
 #username {
     right: 0px;
-    font-weight:bolder ;
+    font-weight: bolder;
 }
 
 #username:hover {
     background-color: rgb(196, 13, 13);
 }
 
+
 /* content start   */
+
 .content_main {
     width: 100%;
 }
@@ -123,27 +130,27 @@ a {
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 20px;
-
 }
 
+
 /* movie show  */
+
 .movie {
     padding: 10px;
     text-align: center;
-
 }
+
 .w3-container {
     padding: 10px;
 }
+
 .movie img {
     width: 220px;
     height: 320px;
-
 }
 
 .w3-modal {
     display: none;
-
 }
 
 .w3-container {
@@ -165,15 +172,15 @@ a {
 
 .imgagediv>div {
     padding: 10px;
-
 }
 
 .w3-tooltip {
     cursor: pointer;
 }
 
-.content-title{
-    padding:20px ;
+.content-title {
+    padding: 20px;
 }
+
 
 /* movie show  */

@@ -21,6 +21,52 @@
 </head>
 
 <body>
+    <script>
+        function rate(url,id) {
+            var x = document.getElementById(id);
+            console.log(id)
+            console.log(x.style.color)
+            if (x.style.color === "white") {
+                console.log("liked")
+                $.ajax({
+                    
+                    url: url,
+                    type: 'get',
+                    success: function(response) {
+                        x.style.color = "blue";
+                        console.log("success")
+                    },
+                    error: function(response) {
+                        console.log("error")
+    
+                    }
+                });
+            } else if (x.style.color === "blue") {
+                console.log("disliked")
+            
+                $.ajax({
+                    
+                    url: url,
+                    type: 'get',
+                    success: function(response) {
+                        x.style.color = "white";
+                        console.log("success")
+                    },
+                    error: function(response) {
+                        console.log("error")
+    
+                    }
+                });
+    
+    
+    
+            } else {
+                x.style.color = "white";
+                console.log("else")
+            }
+        }
+    </script>
+
     <div class="content_main">
         <!-- navigation bar  -->
         <div class="navbar">

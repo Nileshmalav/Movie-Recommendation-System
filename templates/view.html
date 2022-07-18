@@ -44,24 +44,24 @@
                                     <p> <b>Overview</b> {{movie.Overview}}</p>
                                 </div>
                                 <div>
-                                    <div class="w3-tooltip" onclick='myRedirect("/rate/l/{{movie['index']}}")'>
+                                    <div class="w3-tooltip">
                                         <span style="position:absolute;left:30px;bottom:25px"
                                             class="w3-text w3-tag">like</span>
-                                        <span class="material-symbols-outlined">
+                                        <span style="color:white;"  onclick='rate("/rate/l/{{movie['index']}}","like{{movie['index']}}")' id="like{{movie['index']}}" class="material-symbols-outlined">
                                             thumb_up
                                         </span>
                                     </div>
-                                    <div class="w3-tooltip" onclick='myRedirect("/rate/u/{{movie['index']}}")'>
+                                    <div class="w3-tooltip">
                                         <span style="position:absolute;left:30px;bottom:25px"
                                             class="w3-text w3-tag">dislike</span>
-                                        <span class="material-symbols-outlined">
+                                        <span style="color:white;"  onclick='rate("/rate/u/{{movie['index']}}","unlike{{movie['index']}}")' id="unlike{{movie['index']}}" class="material-symbols-outlined">
                                             thumb_down
                                         </span>
                                     </div>
-                                    <div class="w3-tooltip" onclick='myRedirect("/rate/w/{{movie['index']}}")'>
+                                    <div class="w3-tooltip">
                                         <span style="position:absolute;left:30px;bottom:25px"
                                             class="w3-text w3-tag">watched</span>
-                                        <span class="material-symbols-outlined">
+                                        <span style="color:white;"  onclick='rate("/rate/w/{{movie['index']}}","watch{{movie['index']}}")' id="watch{{movie['index']}}" class="material-symbols-outlined">
                                             play_circle
                                         </span>
                                     </div>
